@@ -1,7 +1,7 @@
 # Quention
 ### Remote Access Tool
 
-#### My goal for this project is to create a Python based RAT with little-to-no usages of other languages such as Batch & Shell. My purpose for this project is to gain knowledge on these languages. 
+#### My goal for this project is to create a Python based RAT with little-to-no usages of other languages such as Batch. My purpose for this project is to gain knowledge on these languages. 
 
 
 #### Components:
