@@ -17,6 +17,6 @@ echo $path
 
 mkdir $path
 cd $path
-echo "" > poc. txt
+echo "" > proofofconcept. txt
 cd "C:\Users\dylan\Documents\Personal Projects\Quention\files"
 pause
