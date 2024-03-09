@@ -16,8 +16,8 @@ $pocpath = "$env:TEMP/poc"
 echo $path
 
 
-mkdir $pocpath
-cd $pocpath
-echo "" > proofofconcept. txt
+mkdir $path
+cd $path
+echo "" > poc. txt
 cd "C:\Users\dylan\Documents\Personal Projects\Quention\files"
 pause
