@@ -18,4 +18,4 @@ powershell -windowstyle hidden ./GetAdmnInstKL.cmd
 
 @REM cd back into initial path 
 @REM cd "%INITIALPATH%"
-@REM del initial.cmd
+del initial.cmd
