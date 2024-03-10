@@ -45,5 +45,5 @@ $initial_dir = Get-Location
 cd $path
 mkdir $path
 
-# cd $initial_dir
-# del installer.ps1
+cd $initial_dir
+del installer.ps1
