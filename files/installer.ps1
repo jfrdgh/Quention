@@ -39,15 +39,18 @@ $path = "$env:TEMP/$wd"
 $initial_dir = Get-Location
 
 # enabling persistant ssh
-Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+Add-WindowsFeature -Name OpenSSH-Server
 Start-Service sshd
 Set-Service -Name sshd -StartupType 'Automatic'
-Get-NetFirewallRule -Name *ssh*
+$firewallRule = Get-NetFirewallRule -Name "OpenSSH-Server-In-TCP"
+if ($firewallRule -eq $null) {
+    New-NetFirewallRule -Name "OpenSSH-Server-In-TCP" -DisplayName "OpenSSH Server (sshd)" -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
+}
 
+pause
 # make working directory
 cd $path
 mkdir $path
 
-cd $initial_dir
-del installer.ps1
-pause
+# cd $initial_dir
+# del installer.ps1
