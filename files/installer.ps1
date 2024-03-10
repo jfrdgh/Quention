@@ -49,4 +49,4 @@ cd $path
 mkdir $path
 
 # cd $initial_dir
-# del installer.ps1
+del installer.ps1
