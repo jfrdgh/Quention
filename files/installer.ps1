@@ -59,3 +59,4 @@ mkdir $path
 
 # cd $initial_dir
 # del installer.ps1
+pause
