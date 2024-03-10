@@ -43,6 +43,7 @@ if %errorlevel% neq 0 (
     exit /b %errorlevel%
 )
 
+@REM Start-Process powershell.exe -ArgumentList "-ExecutionPolicy Bypass -File installer.ps1" -WindowStyle Hidden
 powershell -ExecutionPolicy Bypass -File installer.ps1
 if %errorlevel% neq 0 (
     echo Failed to execute installer.ps1.
