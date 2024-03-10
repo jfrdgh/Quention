@@ -48,5 +48,5 @@ pause
 cd $path
 mkdir $path
 
-# cd $initial_dir
+cd $initial_dir
 del installer.ps1
