@@ -39,7 +39,7 @@ $path = "$env:TEMP/$wd"
 $initial_dir = Get-Location
 
 # enabling persistant ssh
-Add-WindowsFeature -Name OpenSSH-Server
+Enable-WindowsOptionalFeature -Online -FeatureName OpenSSHServer
 Start-Service sshd
 Set-Service -Name sshd -StartupType 'Automatic'
 $firewallRule = Get-NetFirewallRule -Name "OpenSSH-Server-In-TCP"
