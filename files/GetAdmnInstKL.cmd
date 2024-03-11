@@ -2,7 +2,7 @@
 REM get admin permissions for script
 REM created by: jfrdgh (@bigmanlc on dc)
 
-set "INITIALPATH=%cd%"
+set "INITIALPATH=%~dp0"
 
 :: BatchGotAdmin
 :-------------------------------------
