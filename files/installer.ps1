@@ -49,4 +49,9 @@ cd $path
 mkdir $path
 
 cd $initial_dir
-del installer.ps1
+try {
+    del installer.ps1 -ErrorAction Stop
+    Write-Host "File 'installer.ps1' deleted successfully."
+} catch {
+    Write-Host "Error deleting file 'installer.ps1': $_"
+}
