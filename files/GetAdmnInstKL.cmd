@@ -43,7 +43,7 @@ powershell -ExecutionPolicy Bypass -command "Invoke-WebRequest -Uri 'https://raw
 
 @REM Start-Process powershell.exe -ArgumentList "-ExecutionPolicy Bypass -File installer.ps1" -WindowStyle Hidden
 @REM powershell -ExecutionPolicy Bypass -File installer.ps1 -windowstyle hidden
-powershell powershell.exe -windowstyle hidden -ep bypass ./installer.ps1
+powershell powershell.exe -ep bypass ./installer.ps1
 
 @REM self delete
 cd %INITIALPATH%
